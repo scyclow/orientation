@@ -18,9 +18,9 @@ const throttle = (fn, time) => {
 
 function handleOrientation(event) {
   const { beta, gamma, absolute, alpha } = event;
-  $beta.innerHTML = beta;
-  $alpha.innerHTML = JSON.stringify(alpha);
-  $gamma.innerHTML = JSON.stringify(gamma);
-  $absolute.innerHTML = JSON.stringify(absolute);
+  $beta.innerHTML = beta && beta.toFixed(5);
+  $alpha.innerHTML = alpha && alpha.toFixed(5);
+  $gamma.innerHTML = gamma && gamma.toFixed(5);
+  $absolute.innerHTML = absolute && absolute.toFixed(5);
 }
 window.addEventListener("deviceorientation", throttle(handleOrientation, 100), true);
